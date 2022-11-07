@@ -38,7 +38,7 @@ class User {
       book.setOwener(this.getName());
       this.#booksList.push(book);
     } else {
-      console.log(`The user: ${this.getName()} cant take the book ${book.getBookName()} already owned`);
+      console.log(`The user: ${this.getName()} cant take the book: ${book.getBookName()} cause the book already owned`);
     }
   }
 
@@ -53,9 +53,11 @@ class User {
 
 class Book {
   #bookName;
+  #authorName;
   #owener;
-  constructor(bookName) {
+  constructor(bookName,authorName) {
     this.#bookName = bookName;
+    this.#authorName = authorName;
     this.#owener = null;
   }
 
@@ -78,11 +80,11 @@ let s1 = new User("Tamir", "Linden", "Holon");
 let s2 = new User("Nadav", "Cohen", "Gan Yavne");
 let s3 = new User("Moshe", "Amsalem", "Or Akiva");
 
-let b1 = new Book("I robot");
-let b2 = new Book("Harry Potter");
-let b3 = new Book("The Witcher");
-let b5 = new Book("The Witcher 2");
-let b4 = new Book("Inception");
+let b1 = new Book("I robot","Tal Huri");
+let b2 = new Book("Harry Potter", "Shoham Buskila");
+let b3 = new Book("The Witcher", "Stav Gabai");
+let b5 = new Book("The Witcher 2", "Angela Shemesh");
+let b4 = new Book("Inception", "Elad Hakim");
 
 s1.takeBook(b1);
 s1.takeBook(b2);
